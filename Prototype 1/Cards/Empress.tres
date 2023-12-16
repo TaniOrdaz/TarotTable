@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CardConfig" load_steps=3 format=3 uid="uid://dgcouii6olk1r"]
+
+[ext_resource type="Texture2D" uid="uid://qw6i0qagfuvg" path="res://Assets/Sprites/TheEmpress.png" id="1_tsncb"]
+[ext_resource type="Script" path="res://Scripts/CardConfig.gd" id="2_jfms4"]
+
+[resource]
+script = ExtResource("2_jfms4")
+cardName = "The Empress"
+health = 6
+strength = 3
+patience = 2
+abilityName = "Abundance"
+abilityCost = 0
+abilityText = "Draw 1 card when an ally is summoned"
+art = ExtResource("1_tsncb")

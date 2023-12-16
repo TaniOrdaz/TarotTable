@@ -1,0 +1,158 @@
+[gd_scene load_steps=10 format=3 uid="uid://t0xu4bxrdqj7"]
+
+[ext_resource type="Script" path="res://Scripts/CardLoader.gd" id="1_evsta"]
+[ext_resource type="Texture2D" uid="uid://hk2ouqf4loi6" path="res://Assets/Sprites/CardBaseSprite.png" id="1_ka23c"]
+[ext_resource type="Resource" uid="uid://dn7l51ixjmqkj" path="res://Cards/Fool.tres" id="2_1qhu8"]
+[ext_resource type="Texture2D" uid="uid://8mlognfrl1p7" path="res://Assets/Sprites/CardBackSprite.png" id="2_tl438"]
+[ext_resource type="Texture2D" uid="uid://c7iqi38vab3ty" path="res://Assets/Sprites/TheFool.png" id="3_qerne"]
+[ext_resource type="Texture2D" uid="uid://c00667du1ufe0" path="res://Assets/Sprites/Health.png" id="4_wij8g"]
+[ext_resource type="Texture2D" uid="uid://n3s6gr0j7tt0" path="res://Assets/Sprites/Strength.png" id="5_ofqtb"]
+[ext_resource type="Texture2D" uid="uid://dg04nx40fwoim" path="res://Assets/Sprites/Patience.png" id="6_nsjp4"]
+[ext_resource type="Texture2D" uid="uid://g6ogj4g7p14b" path="res://Assets/Sprites/Energy.png" id="7_wahmu"]
+
+[node name="Card" type="Node3D" node_paths=PackedStringArray("cardBase", "cardArt", "cardNameText", "healthText", "strengthText", "patienceText", "abilityNameText", "abilityDescText", "abilityCostIcons")]
+script = ExtResource("1_evsta")
+cardBase = NodePath("Card Base")
+cardData = ExtResource("2_1qhu8")
+cardArt = NodePath("Card Base/Card Art")
+cardNameText = NodePath("Card Base/Card Name")
+healthText = NodePath("Card Base/Health/Health Text")
+strengthText = NodePath("Card Base/Strength/Strength Text")
+patienceText = NodePath("Card Base/Patience/Patience Text")
+abilityNameText = NodePath("Card Base/Ability/Ability Name")
+abilityDescText = NodePath("Card Base/Ability/Ability Description")
+abilityCostIcons = [NodePath("Card Base/Ability/Energy Cost/Energy 1"), NodePath("Card Base/Ability/Energy Cost/Energy 2"), NodePath("Card Base/Ability/Energy Cost/Energy 3")]
+
+[node name="Card Base" type="Sprite3D" parent="."]
+sorting_offset = 1.0
+pixel_size = 0.007
+double_sided = false
+texture = ExtResource("1_ka23c")
+
+[node name="Card Back" type="Sprite3D" parent="Card Base"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+sorting_offset = 1.0
+pixel_size = 0.007
+double_sided = false
+texture = ExtResource("2_tl438")
+
+[node name="Card Art" type="Sprite3D" parent="Card Base"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.016, 0.547001, 0)
+sorting_offset = 2.5
+pixel_size = 0.0028
+double_sided = false
+texture = ExtResource("3_qerne")
+
+[node name="Card Name" type="Label3D" parent="Card Base"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.12458, 0)
+sorting_offset = 1.5
+double_sided = false
+modulate = Color(0.407843, 0, 0.498039, 1)
+text = "[Card Name]"
+font_size = 60
+autowrap_mode = 2
+
+[node name="Health" type="Sprite3D" parent="Card Base"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 2.19859, 0)
+sorting_offset = 2.5
+pixel_size = 0.002
+double_sided = false
+texture = ExtResource("4_wij8g")
+
+[node name="Health Text" type="Label3D" parent="Card Base/Health"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0168171)
+sorting_offset = 2.75
+double_sided = false
+render_priority = 1
+outline_render_priority = 0
+modulate = Color(0.407843, 0, 0.498039, 1)
+outline_modulate = Color(1, 0.752941, 0.376471, 1)
+text = "0
+"
+font_size = 50
+
+[node name="Strength" type="Sprite3D" parent="Card Base"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.19859, 0)
+sorting_offset = 2.5
+pixel_size = 0.002
+double_sided = false
+texture = ExtResource("5_ofqtb")
+
+[node name="Strength Text" type="Label3D" parent="Card Base/Strength"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0168171)
+sorting_offset = 2.75
+double_sided = false
+render_priority = 1
+outline_render_priority = 0
+modulate = Color(0.407843, 0, 0.498039, 1)
+outline_modulate = Color(1, 0.752941, 0.376471, 1)
+text = "0
+"
+font_size = 50
+
+[node name="Patience" type="Sprite3D" parent="Card Base"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 2.19859, 0)
+sorting_offset = 2.5
+pixel_size = 0.002
+double_sided = false
+texture = ExtResource("6_nsjp4")
+
+[node name="Patience Text" type="Label3D" parent="Card Base/Patience"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0168171)
+sorting_offset = 2.75
+double_sided = false
+render_priority = 1
+outline_render_priority = 0
+modulate = Color(0.407843, 0, 0.498039, 1)
+outline_modulate = Color(1, 0.752941, 0.376471, 1)
+text = "0
+"
+font_size = 50
+
+[node name="Ability" type="Node3D" parent="Card Base"]
+
+[node name="Ability Name" type="Label3D" parent="Card Base/Ability"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.05722, -1.74282, 0)
+sorting_offset = 2.76
+double_sided = false
+modulate = Color(1, 0.870588, 0.498039, 1)
+text = "[Ability]
+"
+font_size = 30
+horizontal_alignment = 0
+autowrap_mode = 2
+width = 275.0
+
+[node name="Energy Cost" type="Node3D" parent="Card Base/Ability"]
+
+[node name="Energy 1" type="Sprite3D" parent="Card Base/Ability/Energy Cost"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, -1.743, 0)
+sorting_offset = 3.0
+pixel_size = 0.001
+double_sided = false
+texture = ExtResource("7_wahmu")
+
+[node name="Energy 2" type="Sprite3D" parent="Card Base/Ability/Energy Cost"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, -1.743, 0)
+sorting_offset = 3.0
+pixel_size = 0.001
+double_sided = false
+texture = ExtResource("7_wahmu")
+
+[node name="Energy 3" type="Sprite3D" parent="Card Base/Ability/Energy Cost"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -1.743, 0)
+sorting_offset = 3.0
+pixel_size = 0.001
+double_sided = false
+texture = ExtResource("7_wahmu")
+
+[node name="Ability Description" type="Label3D" parent="Card Base/Ability"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.14041, 0)
+sorting_offset = 3.25
+double_sided = false
+modulate = Color(1, 0.870588, 0.498039, 1)
+text = "[Description]
+"
+font_size = 20
+autowrap_mode = 2
+width = 450.0

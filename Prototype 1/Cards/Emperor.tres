@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CardConfig" load_steps=3 format=3 uid="uid://v1qxjxvja6pp"]
+
+[ext_resource type="Texture2D" uid="uid://i61nmi3jfpeb" path="res://Assets/Sprites/TheEmperor.png" id="1_xsawh"]
+[ext_resource type="Script" path="res://Scripts/CardConfig.gd" id="2_oiwkv"]
+
+[resource]
+script = ExtResource("2_oiwkv")
+cardName = "The Emperor"
+health = 6
+strength = 4
+patience = 4
+abilityName = "Dominance"
+abilityCost = 0
+abilityText = "Opponent discards 1 card when an enemy dies"
+art = ExtResource("1_xsawh")

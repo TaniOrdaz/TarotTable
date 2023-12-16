@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CardConfig" load_steps=3 format=3 uid="uid://blmwfgalxq8a5"]
+
+[ext_resource type="Texture2D" uid="uid://da10qonhbwsr8" path="res://Assets/Sprites/TheMagician.png" id="1_tyguc"]
+[ext_resource type="Script" path="res://Scripts/CardConfig.gd" id="2_84oii"]
+
+[resource]
+script = ExtResource("2_84oii")
+cardName = "The Magician"
+cardType = 1
+health = 6
+strength = 3
+patience = 3
+abilityName = "Enhance"
+abilityCost = 1
+abilityText = "Lower the Patience of 1 Ally by 1"
+art = ExtResource("1_tyguc")

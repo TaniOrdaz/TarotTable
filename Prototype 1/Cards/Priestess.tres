@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CardConfig" load_steps=3 format=3 uid="uid://bfdhbanhrfa7g"]
+
+[ext_resource type="Texture2D" uid="uid://b5e6eqx6k8ty5" path="res://Assets/Sprites/TheHighPriestess.png" id="1_iyyku"]
+[ext_resource type="Script" path="res://Scripts/CardConfig.gd" id="2_6vvgv"]
+
+[resource]
+script = ExtResource("2_6vvgv")
+cardName = "The High Priestess"
+cardType = 2
+health = 7
+strength = 2
+patience = 2
+abilityName = "Divination"
+abilityCost = 0
+abilityText = "Draw 1 card at start of turn"
+art = ExtResource("1_iyyku")
